@@ -2,19 +2,19 @@ var gulp = require('gulp'),
   nodemon = require('gulp-nodemon'),
   plumber = require('gulp-plumber'),
   livereload = require('gulp-livereload'),
-  stylus = require('gulp-stylus');
+//  stylus = require('gulp-stylus');
 
-gulp.task('stylus', function () {
-  gulp.src('./public/css/*.styl')
-    .pipe(plumber())
-    .pipe(stylus())
-    .pipe(gulp.dest('./public/css'))
-    .pipe(livereload());
-});
-
-gulp.task('watch', function() {
-  gulp.watch('./public/css/*.styl', ['stylus']);
-});
+//gulp.task('stylus', function () {
+//  gulp.src('./public/css/*.styl')
+//    .pipe(plumber())
+//    .pipe(stylus())
+//    .pipe(gulp.dest('./public/css'))
+//    .pipe(livereload());
+//});
+//
+//gulp.task('watch', function() {
+//  gulp.watch('./public/css/*.styl', ['stylus']);
+//});
 
 gulp.task('develop', function () {
   livereload.listen();
@@ -34,7 +34,7 @@ gulp.task('develop', function () {
 });
 
 gulp.task('default', [
-  'stylus',
+//  'stylus',
   'develop',
   'watch'
 ]);

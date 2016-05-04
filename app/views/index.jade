@@ -3,7 +3,7 @@ block content
   body(data-spy="scroll" data-target="#sidebar-wrapper") 
     #wrapper
       // Sidebar
-      a#menu-toggle(href="#").btn.btn-primary.btn-lg.toggle
+      a#menu-toggle(href="#").btn.btn-dark.btn-lg.toggle
                 i.glyphicon.glyphicon-sunglasses
       div#sidebar-wrapper
           ul.sidebar-nav.nav
@@ -19,26 +19,33 @@ block content
               a(href='#about', data-scroll='', onclick = "$('#menu-close').click()")
                 span.fa.fa-anchor.solo About
             li
-              a(href='#anch2', data-scroll='', onclick = "$('#menu-close').click()")
-                span.fa.fa-anchor.solo Anchor 2
+              a(href='#links', data-scroll='', onclick = "$('#menu-close').click()")
+                span.fa.fa-anchor.solo links
             li
-              a(href='#anch3', data-scroll='', onclick = "$('#menu-close').click()")
-                span.fa.fa-anchor.solo Anchor 3
+              a(href='#resume', data-scroll='', onclick = "$('#menu-close').click()")
+                span.fa.fa-anchor.solo resume
             li
-              a(href='#anch4', data-scroll='', onclick = "$('#menu-close').click()")
-                span.fa.fa-anchor.solo Anchor 4
+              a(href='#contact', data-scroll='', onclick = "$('#menu-close').click()")
+                span.fa.fa-anchor.solo contact
       // Page content
       header#top.header
           .text-vertical-center
-              h1= title
-              h3= content
+              h1 Jannik Grausen Fischer
+              img(src='img/jglogo.png').animated.bounce.logo     
       section#about.about
-        .container
+          include ./partials/timeline.jade
+      section#links.links
           .row
-            .col-lg-12
-              h2 Jannik Grausen 
-              p.lead
-              | Looking for internship autumn 2k16
+            .col-md-4
+              a(href="http://github.com/nesuarg")
+                i.fa.fa-5x.fa-github.linksicon(aria-hidden='true')
+            .col-md-4
+              a(href="http://github.com/nesuarg")
+                i.fa.fa-5x.fa-linkedin.linksicon(aria-hidden='true')
+            .col-md-4
+              a(href="http://github.com/nesuarg")
+                i.fa.fa-5x.fa-behance.linksicon(aria-hidden='true')
+            
   script.      
     $("#menu-close").click(function(e) {
         e.preventDefault();
